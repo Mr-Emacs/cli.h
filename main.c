@@ -157,13 +157,11 @@ int main(int argc, char **argv) {
         goto err;
     }
 
-    if (status == CLI_HELP) {
+    if (status == CLI_HELP)
         goto suc;
-    }
 
-    if (status == CLI_ERROR) {
+    if (status == CLI_ERROR)
         goto err;
-    }
 
 suc:
     cli_destroy(cli);
