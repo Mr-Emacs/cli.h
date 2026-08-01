@@ -31,7 +31,7 @@
 //
 // When you want to create subflags you would call to either of the following
 // functions
-// @fn: void cli_create_bool(command_t *cmd, const char *name, const char
+// @fn: void cli_create_flag_bool(command_t *cmd, const char *name, const char
 //                           *description, bool *value);
 // ...
 // you would create the value you want to store the state of the flag for
@@ -44,7 +44,7 @@
 // command_t *echo = cli_command(cmd, "echo", "Print output");
 //
 // bool output_yes = false;
-// cli_create_bool(cmd, "yes", "Output yes", &output_yes);
+// cli_create_flag_bool(cmd, "yes", "Output yes", &output_yes);
 //
 // cli_status_t status = cli_parse(cli, argc, argv);
 //  if (argc == 1) {
@@ -127,7 +127,7 @@ int main(int argc, char **argv) {
     // can be null though there should be an option to make it so that we can
     // accept required or not in boolean just like positional flag.
     char *out;
-    cli_create_string(build, "output", "Output executable name", &out);
+    cli_create_flag_string(build, "output", "Output executable name", &out);
     // we aliased it to just the char 'o' so users can just do -o instead of '--output'.
     cli_alias(build, "output", 'o');
 

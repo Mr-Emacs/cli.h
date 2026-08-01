@@ -341,20 +341,21 @@ void cli_command_callback(command_t *cmd, cli_call_back_t callback) {
     cmd->callback = callback;
 }
 
-void cli_create_bool(command_t *cmd, const char *name, const char *description, bool *value) {
+void cli_create_flag_bool(command_t *cmd, const char *name, const char *description, bool *value) {
     cli_add_flag(cmd, CLI_BOOL, name, description, value, 0, 0);
 }
 
-void cli_create_int(command_t *cmd, const char *name, const char *description, int *value) {
+void cli_create_flag_int(command_t *cmd, const char *name, const char *description, int *value) {
     cli_add_flag(cmd, CLI_INT, name, description, value, 0, 0);
 }
 
-void cli_create_string(command_t *cmd, const char *name, const char *description, char **value) {
+void cli_create_flag_string(command_t *cmd, const char *name, const char *description,
+                            char **value) {
     cli_add_flag(cmd, CLI_STRING, name, description, value, 0, 0);
 }
 
-void cli_create_strings(command_t *cmd, const char *name, const char *description,
-                        strings_t *value) {
+void cli_create_flag_strings(command_t *cmd, const char *name, const char *description,
+                             strings_t *value) {
     cli_add_flag(cmd, CLI_STRING_LIST, name, description, value, 0, 0);
 }
 
