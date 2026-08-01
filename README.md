@@ -83,6 +83,6 @@ To compile this example run
 
 ```sh
 gcc -o main main.c cli.c #or what ever you called the file.
-``
+```
 
 The license under which the file is in MIT LICENSE.
